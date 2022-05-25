@@ -93,6 +93,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.10.0)
     execjs (2.8.1)
+    faker (2.21.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     font-awesome-sass (6.1.1)
       sassc (~> 2.0)
@@ -235,6 +237,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise (~> 4.8, >= 4.8.1)
+  faker (~> 2.21)
   font-awesome-sass (~> 6.1, >= 6.1.1)
   jbuilder (~> 2.7)
   listen (~> 3.3)

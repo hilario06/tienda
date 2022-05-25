@@ -1,0 +1,44 @@
+<div style="background-color: #F1FAF8;">
+  <div class="container" style="padding: 20px 0;">
+    <div class="auto-grid">
+      <% @products.each_with_index do |product, index| %>
+        <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                  <% if index < 4 %>
+                    <%= image_tag("product-a#{index}.jpg", class: 'pic-1') %>
+                    <%= image_tag("product-b#{index}.jpg", class: 'pic-2') %>
+                  <% else %>
+                    <%= image_tag("product-a4.jpg", class: 'pic-1') %>
+                    <%= image_tag("product-b4.jpg", class: 'pic-2') %>
+                  <% end %>
+                </a>
+                <span class="product-sale-label">sale!</span>
+                <ul class="social">
+                    <li>
+                      <%= link_to product do %>
+                        <i class="fa fa-eye"></i>
+                      <% end %>
+                    </li>
+                    <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                </ul>
+                <div class="product-rating">
+                    <ul class="rating">
+                        <li class="fas fa-star"></li>
+                        <li class="fas fa-star"></li>
+                        <li class="fas fa-star"></li>
+                        <li class="far fa-star"></li>
+                        <li class="far fa-star"></li>
+                    </ul>
+                    <a class="add-to-cart" href="#"> ADD TO CART </a>
+                </div>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">Women's Tshirt</a></h3>
+                <div class="price">$19.00</div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

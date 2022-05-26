@@ -1,3 +1,28 @@
 .container-products-show{
   display: flex;
+
+  .price{
+    margin-top: 22px;
+    margin-bottom: 13px;
+    color: #474A57;
+  }
+  .price .woocs_price_code{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .price .woocs_price_code{
+    display: inline-flex;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #474A57;
+  }
+  .price del{
+    opacity: 0.8;
+    margin-right: 15px;
+  }
+  .price del .amount{
+    font-size: 1.33rem;
+    color: #969BAB;
+    text-decoration: line-through;
+  }
 }

@@ -1,27 +1,49 @@
 <div class="container">
+  <!--<p><%= @product.title %></p>-->
   <div class="container-products-show">
     <div>
-      <%= image_tag("product-a1.jpg") %>
+      <% if @product.id <= 5 %>
+        <%= image_tag("product-a#{@product.id}.jpg") %>
+      <% else %>
+        <%= image_tag("product-a1.jpg") %>
+      <% end %>
     </div>
-    <div>
+    <div class="container-info-product">
       <h3>Accer Nitro-5 Laptop</h3>
-      <p class="price">
-        <span class="woocs_price_code" data-product-id="1472">
-          <del aria-hidden="true">
-            <span class="woocommerce-Price-amount amount">
-              <bdi><span class="woocommerce-Price-currencySymbol">$</span>200.00</bdi>
-            </span>
-          </del>
-          <ins>
-            <span class="woocommerce-Price-amount amount">
-              <bdi><span class="woocommerce-Price-currencySymbol">$</span>160.00</bdi>
-            </span>
-          </ins>
-        </span>
+      <p class="price-product">
+        <span>$160.00</span>
+        <span>$200.00</span>
       </p>
-      <p>Quot semper vivendo ad vix, qui ad diam lucilius repudiare.
+      <p class="description-product">Quot semper vivendo ad vix, qui ad diam lucilius repudiare.
       Autem voluptua ius id.
-      Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut</p>
+      Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut
+      </p>
+      <form action="">
+        <div class="quantity">
+          <input type="number" min="1" step="1" name="" id="" size="4" value="1" autocomplete="off">
+        </div>
+        <button type="submit">Add to cart</button>
+        <%= link_to edit_product_path(@product), class: 'edit' do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+        <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      </form>
+      <p class="anadir-lista-product">
+        <a href=""><i class="far fa-heart"></i> &nbsp;Añadir lista de deseos</a>
+      </p>
+      <p><span>SKU: </span> 10</p>
+    </div>
+  </div>
+  <div class="container-reviews">
+    <h6><span>Comentarios (0)</span></h6>
+    <h6>Comentarios</h6>
+    <p>Be The First To Review “Living Room Sofa And Interior”</p>
+    <div class="write-reviews">
+      <p><label>Your review *</label></p>
+      <textarea></textarea>
+      <input type="submit">
     </div>
   </div>
 </div>

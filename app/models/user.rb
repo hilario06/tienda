@@ -18,6 +18,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :product_likes
+  has_many :products, through: :product_likes
   has_many :shopping_carts
   has_one :shopping_cart, -> { where(active:true).order('id DESC') }
 end

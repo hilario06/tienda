@@ -21,4 +21,5 @@ class User < ApplicationRecord
   has_many :products, through: :product_likes
   has_many :shopping_carts
   has_one :shopping_cart, -> { where(active:true).order('id DESC') }
+  has_many :reviews
 end

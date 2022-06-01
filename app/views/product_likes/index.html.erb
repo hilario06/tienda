@@ -4,7 +4,11 @@
       <div class="item-product-likes my-3">
         <div class="content-left">
           <div class="container-img">
-            <%= image_tag("product-a4.jpg") %>
+            <% if product.id <= 5 %>
+              <%= image_tag("product-a#{product.id}.jpg") %>
+            <% else %>
+              <%= image_tag("product-a4.jpg") %>
+            <% end %>
           </div>
           <div class="container-description">
             <h6>Project Title</h6>

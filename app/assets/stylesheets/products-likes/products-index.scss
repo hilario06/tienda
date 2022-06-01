@@ -12,7 +12,7 @@
         width: 120px;
         img {
           width: 100%;
-          height: 100%;
+          object-fit: contain;
         }
       }
       .container-description{
@@ -29,17 +29,23 @@
       .show-product{
         padding: 6px 4px 6px 8px;
         margin-right: 8px;
-        font-size: 16px;
         background-color: #4A4A4B;
         color: #fff;
+        &:hover {
+          color: #BDD239;
+        }
       }
       .delete{
         padding: 6px 10px;
         margin-right: 20px;
-        font-size: 16px;
-        // background-color: red;
         background-color: #4A4A4B;
         color: #fff;
+        &:hover {
+          color: red;
+        }
+      }
+      a{
+        font-size: 16px;
       }
     }
   }

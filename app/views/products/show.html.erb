@@ -31,7 +31,9 @@
         <% end %>
       </form>
       <p class="anadir-lista-product">
-        <a href=""><i class="far fa-heart"></i> &nbsp;Añadir lista de deseos</a>
+        <%= link_to product_likes_path(:product => @product), method: :post do %>
+          <i class="fa fa-heart"></i> &nbsp;Añadir lista de deseos
+        <% end %>
       </p>
       <p><span>SKU: </span> 10</p>
     </div>

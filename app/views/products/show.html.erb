@@ -43,9 +43,17 @@
     <h6>Comentarios</h6>
     <p>Be The First To Review “Living Room Sofa And Interior”</p>
     <div class="write-reviews">
-      <p><label>Your review *</label></p>
-      <textarea></textarea>
-      <input type="submit">
+      <% if user_signed_in? %>
+        <p>Agrega una Comentario</p>
+        <p><label>Your review *</label></p>
+        <%= simple_form_for([ @product, @review ], remote: true) do |f| %>
+          <div class="rating">
+            <strong>Tu clasificación: </strong>&nbsp;&nbsp;<%= f.input :rating, placeholder: "Valoración"%>
+          </div>
+          <%= f.input :content, as: :text, placeholder: "Comentario"%>
+          <%= f.submit 'Agregar Comentario', class: 'buttom-review mt-2' %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

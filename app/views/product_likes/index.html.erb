@@ -1,0 +1,29 @@
+<div class="container-product-likes py-3">
+  <div class="container">
+    <% @product_likes.each do |product| %>
+      <div class="item-product-likes my-3">
+        <div class="content-left">
+          <div class="container-img">
+            <% if product.id <= 5 %>
+              <%= image_tag("product-a#{product.id}.jpg") %>
+            <% else %>
+              <%= image_tag("product-a4.jpg") %>
+            <% end %>
+          </div>
+          <div class="container-description">
+            <h6>Project Title</h6>
+            <small>Lorem Ipsum Dolor</small>
+          </div>
+        </div>
+        <div class="content-rigth">
+          <%= link_to product, class: 'show-product' do %>
+            <i class="fa fa-eye"></i>
+          <% end %>
+          <%= link_to product_like_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

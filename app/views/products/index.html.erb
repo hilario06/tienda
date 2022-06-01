@@ -20,7 +20,10 @@
                       <i class="fa fa-eye"></i>
                     <% end %>
                   </li>
-                  <li><a href="#" data-tip="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li>
+                    <%= link_to product_likes_path(:product => product), method: :post do %>
+                      <i class="fa fa-heart"></i>
+                    <% end %>
                   <li>
                     <%= link_to edit_product_path(product), style: 'color: #fff; background-color: blue;' do %>
                       <i class="far fa-edit"></i>

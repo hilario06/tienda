@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     @review = Review.new
+    @reviews = @product.reviews.order('created_at DESC')
   end
 
   def new

@@ -1,59 +1,88 @@
-<div class="container">
-  <!--<p><%= @product.title %></p>-->
-  <div class="container-products-show">
-    <div>
-      <% if @product.id <= 5 %>
-        <%= image_tag("product-a#{@product.id}.jpg") %>
-      <% else %>
-        <%= image_tag("product-a1.jpg") %>
-      <% end %>
-    </div>
-    <div class="container-info-product">
-      <h3>Accer Nitro-5 Laptop</h3>
-      <p class="price-product">
-        <span>$160.00</span>
-        <span>$200.00</span>
-      </p>
-      <p class="description-product">Quot semper vivendo ad vix, qui ad diam lucilius repudiare.
-      Autem voluptua ius id.
-      Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut
-      </p>
-      <form action="">
-        <div class="quantity">
-          <input type="number" min="1" step="1" name="" id="" size="4" value="1" autocomplete="off">
-        </div>
-        <button type="submit">Add to cart</button>
-        <%= link_to edit_product_path(@product), class: 'edit' do %>
-          <i class="far fa-edit"></i>
+<div style="margin:25px;">
+  <div class="container">
+    <div class="container-products-show">
+      <div>
+        <% if @product.id <= 5 %>
+          <%= image_tag("product-a#{@product.id}.jpg") %>
+        <% else %>
+          <%= image_tag("product-a1.jpg") %>
         <% end %>
-        <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
-          <i class="far fa-trash-alt"></i>
-        <% end %>
-      </form>
-      <p class="anadir-lista-product">
-        <%= link_to product_likes_path(:product => @product), method: :post do %>
-          <i class="fa fa-heart"></i> &nbsp;Añadir lista de deseos
-        <% end %>
-      </p>
-      <p><span>SKU: </span> 10</p>
-    </div>
-  </div>
-  <div class="container-reviews">
-    <h6><span>Comentarios (0)</span></h6>
-    <h6>Comentarios</h6>
-    <p>Be The First To Review “Living Room Sofa And Interior”</p>
-    <div class="write-reviews">
-      <% if user_signed_in? %>
-        <p>Agrega una Comentario</p>
-        <p><label>Your review *</label></p>
-        <%= simple_form_for([ @product, @review ], remote: true) do |f| %>
-          <div class="rating">
-            <strong>Tu clasificación: </strong>&nbsp;&nbsp;<%= f.input :rating, placeholder: "Valoración"%>
+      </div>
+      <div class="container-info-product">
+        <h3>Accer Nitro-5 Laptop</h3>
+        <p class="price-product">
+          <span>$160.00</span>
+          <span>$200.00</span>
+        </p>
+        <p class="description-product">Quot semper vivendo ad vix, qui ad diam lucilius repudiare.
+        Autem voluptua ius id.
+        Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut
+        </p>
+        <form action="">
+          <div class="quantity">
+            <input type="number" min="1" step="1" name="" id="" size="4" value="1" autocomplete="off">
           </div>
-          <%= f.input :content, as: :text, placeholder: "Comentario"%>
-          <%= f.submit 'Agregar Comentario', class: 'buttom-review mt-2' %>
+          <button type="submit">Add to cart</button>
+          <%= link_to edit_product_path(@product), class: 'edit' do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </form>
+        <p class="anadir-lista-product">
+          <%= link_to product_likes_path(:product => @product), method: :post do %>
+            <i class="fa fa-heart"></i> &nbsp;Añadir lista de deseos
+          <% end %>
+        </p>
+        <p><span>SKU: </span> 10</p>
+      </div>
+    </div>
+    <div class="container-reviews">
+      <h6><span>Comentarios (<%= @reviews.count %>)</span></h6>
+      <h6>Comentarios</h6>
+      <% if @reviews.blank? %>
+        <p><i class="far fa-comment-alt"></i>&nbsp; Sé el primero en dejar un comentario</p>
+      <% else %>
+        <% @reviews.each do |review| %>
+          <div class="container-list-reviews my-4">
+            <div class="container-img">
+              <%= image_tag("user.png") %>
+            </div>
+            <div class="container-description">
+              <ul class="rating">
+                <% review.rating.times do |rating| %>
+                  <li class="fas fa-star"></li>
+                <% end %>
+                <% if user_signed_in? && review.user == current_user %>
+                  <%= link_to review_path(review, :product_id => @product.id),
+                    method: :delete,
+                    class: 'product-remove rounded-circle btn',
+                    data: { confirm: "¿Estás seguro?" } do %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
+                <% end %>
+              </ul>
+              <small>Admin – <%= review.created_at.utc.localtime("-05:00").strftime("%h %d, %Y - %I:%M %p") %></small>
+              <p><%= review.content %></p>
+              <!--<p>Be The First To Review “Living Room Sofa And Interior”</p>-->
+            </div>
+          </div>
         <% end %>
       <% end %>
+      <div class="write-reviews">
+        <% if user_signed_in? %>
+          <p>Agrega una Comentario</p>
+          <p><label>Your review *</label></p>
+          <%= simple_form_for([ @product, @review ], remote: true) do |f| %>
+            <div class="rating">
+              <strong>Tu clasificación: </strong>&nbsp;&nbsp;<%= f.input :rating, input_html: { min: '1', max: '5' }, placeholder: "1,..,5"%>
+            </div>
+            <%= f.input :content, as: :text, placeholder: "Comentario"%>
+            <%= f.submit 'Agregar Comentario', class: 'buttom-review mt-2' %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

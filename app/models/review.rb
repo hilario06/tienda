@@ -3,7 +3,6 @@
 # Table name: reviews
 #
 #  id         :bigint           not null, primary key
-#  title      :string
 #  content    :text
 #  rating     :integer
 #  user_id    :bigint           not null

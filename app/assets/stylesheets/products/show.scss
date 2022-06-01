@@ -103,6 +103,29 @@
   h6:nth-child(2){
     margin: 30px 0 20px 0;
   }
+  .container-list-reviews{
+    display: flex;
+    align-items: center;
+    .container-img{
+      margin-right: 30px;
+      img{
+        width: 90px;
+        border-radius: 50%;
+      }
+    }
+    .container-description{
+      .rating{
+        padding: 0;
+        margin-bottom: 0px;
+      }
+      small{
+        padding: 8px 0 10px 0;
+      }
+      p{
+        color: #474A57;
+      }
+    }
+  }
   .write-reviews{
     label{
       display: none;

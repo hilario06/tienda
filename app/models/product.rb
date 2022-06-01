@@ -15,5 +15,5 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :shopping_cart_products
   has_many :product_likes
-  has_many :ratings
+  has_many :reviews
 end

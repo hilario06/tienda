@@ -12,6 +12,9 @@
           </div>
         </div>
         <div class="content-rigth">
+          <%= link_to product, class: 'show-product' do %>
+            <i class="fa fa-eye"></i>
+          <% end %>
           <%= link_to product_like_path(product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
             <i class="far fa-trash-alt"></i>
           <% end %>
@@ -20,6 +23,3 @@
     <% end %>
   </div>
 </div>
-<!--<% @product_likes.each do |product| %>
-  <p><%= product.title %></p>
-<% end %>-->

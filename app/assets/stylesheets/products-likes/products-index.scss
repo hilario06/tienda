@@ -26,7 +26,14 @@
       }
     }
     .content-rigth{
-      a{
+      .show-product{
+        padding: 6px 4px 6px 8px;
+        margin-right: 8px;
+        font-size: 16px;
+        background-color: #4A4A4B;
+        color: #fff;
+      }
+      .delete{
         padding: 6px 10px;
         margin-right: 20px;
         font-size: 16px;

@@ -1,0 +1,30 @@
+.container-shopping-carts{
+  .container-empty-cart{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .content-img{
+      img{
+        width: 100%;
+      }
+    }
+    p{
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 39px;
+    }
+    a{
+      padding: 10px 40px;
+      background-color: #BDD239;
+      color: #FFF;
+      border: 1px solid #BDD239;
+
+      &:hover {
+        background-color: #FFF;
+        color: #BDD239;
+      }
+    }
+  }
+}

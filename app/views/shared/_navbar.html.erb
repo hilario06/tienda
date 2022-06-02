@@ -32,16 +32,24 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to user_session_path, class: 'nav-link' do %>
+        <!--<li class="nav-item">
+          <%= link_to shopping_carts_path, class: 'nav-link pe-0' do %>
             <i class="fas fa-shopping-cart"></i>
           <% end %>
-        </li>
+        </li>-->
         <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "nav-link" %>
-            </li>
-          <% else %>
+          <li class="nav-item" style="display: flex; align-items: center;">
+            <%= link_to shopping_carts_path, class: 'position-relative cart-style' do %>
+              <i class="fas fa-shopping-cart"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                9
+              </span>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
             <li class="nav-item">
               <%= link_to user_session_path, class: 'nav-link pe-0' do %>
                 <i class="fas fa-user-alt"></i> Login

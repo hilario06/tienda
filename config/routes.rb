@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   resources :product_likes, only: %i[index create destroy]
   resources :reviews, only: :destroy
+  resources :shopping_carts, only: %i[index]
 end

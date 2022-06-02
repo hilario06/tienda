@@ -16,4 +16,5 @@ class Product < ApplicationRecord
   has_many :shopping_cart_products
   has_many :product_likes
   has_many :reviews
+  has_many :product_user_reviews, through: :reviews, source: :user # no estoy usando de momento
 end

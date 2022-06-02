@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     @review = Review.new
-    @reviews = @product.reviews.order('created_at DESC')
+    @reviews = @product.reviews.order('created_at DESC').includes([:user])
   end
 
   def new

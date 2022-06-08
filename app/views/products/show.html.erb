@@ -50,14 +50,13 @@
               <%= image_tag("user.png") %>
             </div>
             <div class="container-description">
-              <ul class="rating">
+              <ul class="rating-list">
                 <% review.rating.times do |rating| %>
                   <li class="fas fa-star"></li>
                 <% end %>
                 <% if user_signed_in? && review.user == current_user %>
                   <%= link_to review_path(review, :product_id => @product.id),
                     method: :delete,
-                    class: 'product-remove rounded-circle btn',
                     data: { confirm: "¿Estás seguro?" } do %>
                     <i class="fas fa-trash"></i>
                   <% end %>

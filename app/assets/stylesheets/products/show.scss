@@ -43,6 +43,11 @@
         font-size: 16px;
         background-color: blue;
         color: #fff;
+        border: 1px solid blue;
+        &:hover{
+          background-color: #fff;
+          color: blue;
+        }
       }
       .delete{
         padding: 6px 10px;
@@ -50,6 +55,11 @@
         font-size: 16px;
         background-color: red;
         color: #fff;
+        border: 1px solid red;
+        &:hover{
+          background-color: #fff;
+          color: red;
+        }
       }
     }
     .anadir-lista-product{
@@ -114,9 +124,16 @@
       }
     }
     .container-description{
-      .rating{
+      .rating-list{
         padding: 0;
         margin-bottom: 0px;
+        a{
+          color: #212529;
+          margin-left: 15px;
+          &:hover{
+            color: red;
+          }
+        }
       }
       small{
         padding: 8px 0 10px 0;

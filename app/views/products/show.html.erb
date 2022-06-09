@@ -18,18 +18,26 @@
         Autem voluptua ius id.
         Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut
         </p>
-        <form action="">
-          <div class="quantity">
-            <input type="number" min="1" step="1" name="" id="" size="4" value="1" autocomplete="off">
-          </div>
-          <button type="submit">Add to cart</button>
+        <div class="buttons-add-to-cart-edit-delete">
+          <%= simple_form_for([ @product, @shopping_cart_product ]) do |f| %>
+            <div class="quantity">
+              <%= f.input :quantity, label: false, input_html: { min: '1' } %>
+            </div>
+            <%= f.submit 'Add to cart', class: '' %>
+          <% end %>
+          <!--<form action="">
+            <div class="quantity">
+              <input type="number" min="1" step="1" name="" id="" size="4" value="1" autocomplete="off">
+            </div>
+            <button type="submit">Add to cart</button>
+          </form>-->
           <%= link_to edit_product_path(@product), class: 'edit' do %>
             <i class="far fa-edit"></i>
           <% end %>
           <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
             <i class="far fa-trash-alt"></i>
           <% end %>
-        </form>
+        </div>
         <p class="anadir-lista-product">
           <%= link_to product_likes_path(:product => @product), method: :post do %>
             <i class="fa fa-heart"></i> &nbsp;Añadir lista de deseos
@@ -72,12 +80,11 @@
       <div class="write-reviews">
         <% if user_signed_in? %>
           <p>Agrega una Comentario</p>
-          <p><label>Your review *</label></p>
           <%= simple_form_for([ @product, @review ], remote: true) do |f| %>
             <div class="rating">
-              <strong>Tu clasificación: </strong>&nbsp;&nbsp;<%= f.input :rating, input_html: { min: '1', max: '5' }, placeholder: "1,..,5"%>
+              <strong>Tu clasificación: </strong>&nbsp;&nbsp;<%= f.input :rating, input_html: { min: '1', max: '5' }, placeholder: "1,..,5", label: false, required: true %>
             </div>
-            <%= f.input :content, as: :text, placeholder: "Comentario"%>
+            <%= f.input :content, as: :text, placeholder: "Comentario", label: false, required: true %>
             <%= f.submit 'Agregar Comentario', class: 'buttom-review mt-2' %>
           <% end %>
         <% end %>

@@ -10,6 +10,6 @@
 #  updated_at       :datetime         not null
 #
 class ShoppingCartProduct < ApplicationRecord
-  belongs_to :shoppingCart
+  belongs_to :shopping_cart
   belongs_to :product
 end

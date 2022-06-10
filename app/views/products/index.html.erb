@@ -43,7 +43,7 @@
                       <li class="far fa-star"></li>
                       <li class="far fa-star"></li>
                   </ul>
-                  <a class="add-to-cart" href="#"> ADD TO CART </a>
+                  <%= link_to ' ADD TO CART ', shopping_cart_products_path(:quantity => 1, :product_id => product.id), method: :post %>
               </div>
             </div>
             <div class="product-content">

@@ -200,6 +200,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    table_print (1.5.7)
     thor (1.2.1)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -254,6 +255,7 @@ DEPENDENCIES
   selenium-webdriver (>= 4.0.0.rc1)
   simple_form (~> 5.1)
   spring
+  table_print (~> 1.5, >= 1.5.7)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

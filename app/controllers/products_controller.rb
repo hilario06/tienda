@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     @review = Review.new
+    @shopping_cart_product = ShoppingCartProduct.new
     @reviews = @product.reviews.order('created_at DESC').includes([:user])
   end
 

@@ -6,50 +6,72 @@
       margin-bottom: 15px;
       line-height: 1.56;
     }
-    form{
+    .buttons-add-to-cart-edit-delete{
       display: flex;
-      .quantity{
-        input{
-          width: 80px;
-          margin: 0;
-          background-color: #F7F7F7;
-          border-color: transparent;
-          color: #474A57;
-          height: 35px;
-          border-radius: 0;
-          padding: 5px;
-          text-align: center;
-          &:focus-visible{
-            outline-color: transparent;
+      form {
+        display: flex;
+        .quantity {
+          input {
+            width: 80px;
+            margin: 0;
+            background-color: #F7F7F7;
+            border-color: transparent;
+            color: #474A57;
+            height: 35px;
+            border-radius: 0;
+            padding: 5px;
+            text-align: center;
+            // &:focus-visible {
+            //   outline-color: transparent;
+            // }
+            &:hover{
+              color: #474A57;
+            }
+            &:focus {
+              box-shadow: none;
+              color: #474A57;
+            }
+          }
+        }
+        input {
+          padding: 6px 29px;
+          margin-left: 10px;
+          font-size: 16px;
+          line-height: 1.3125;
+          background-color: #BDD239;
+          border: 1px solid #BDD239;
+          color: #F7F7F7;
+          &:hover {
+            background-color: #FFF;
+            color: #BDD239;
           }
         }
       }
-      button{
-        padding: 6px 29px;
-        margin-left: 10px;
-        font-size: 16px;
-        line-height: 1.3125;
-        background-color: #BDD239;
-        border: 1px solid #BDD239;
-        color: #F7F7F7;
-        &:hover{
-          background-color: #FFF;
-          color:#BDD239;
-        }
-      }
-      .edit{
+      .edit {
         padding: 6px 10px;
         margin-left: 10px;
         font-size: 16px;
         background-color: blue;
         color: #fff;
+        border: 1px solid blue;
+
+        &:hover {
+          background-color: #fff;
+          color: blue;
+        }
       }
-      .delete{
+      .delete {
         padding: 6px 10px;
         margin-left: 10px;
         font-size: 16px;
         background-color: red;
         color: #fff;
+        border: 1px solid red;
+
+        &:hover {
+          background-color: #fff;
+          color: red;
+        }
       }
     }
     .anadir-lista-product{
@@ -114,9 +136,16 @@
       }
     }
     .container-description{
-      .rating{
+      .rating-list{
         padding: 0;
         margin-bottom: 0px;
+        a{
+          color: #212529;
+          margin-left: 15px;
+          &:hover{
+            color: red;
+          }
+        }
       }
       small{
         padding: 8px 0 10px 0;
@@ -127,9 +156,6 @@
     }
   }
   .write-reviews{
-    label{
-      display: none;
-    }
     .rating{
       display: flex;
       align-items: center;

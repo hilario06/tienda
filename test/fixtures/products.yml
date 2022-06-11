@@ -6,7 +6,7 @@
 #  title       :string
 #  code        :string
 #  stock       :string           default("0")
-#  price       :string           default("0")
+#  price       :integer          default(0)
 #  description :string
 #  category_id :bigint           not null
 #  created_at  :datetime         not null

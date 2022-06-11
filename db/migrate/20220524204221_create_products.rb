@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :code
       t.string :stock, default: 0
-      t.string :price, default: 0
+      t.integer :price, default: 0
       t.string :description
       t.references :category, null: false, foreign_key: true
 

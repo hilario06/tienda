@@ -2,7 +2,11 @@ class ShoppingCartProductsController < ApplicationController
   def create
     @shopping_cart_product = ShoppingCartProduct.new
     @shopping_cart_product.product_id = params[:product_id]
-    @shopping_cart_product.shopping_cart_id = current_user.shopping_cart.id # crear una validacion cuando el usuario no tiene carrito
+    shopping_cart = current_user.shopping_cart
+    unless shopping_cart
+      shopping_cart = ShoppingCart.create(user:current_user, active:true)
+    end
+    @shopping_cart_product.shopping_cart_id = shopping_cart.id
     add_quantity # method
     if @shopping_cart_product.save
       redirect_to product_url(params[:product_id]), notice: "Producto agregado al carrito"

@@ -1,6 +1,8 @@
+<% number_product = @products_in_cart.count %>
+
 <section class="container-shopping-carts">
-  <% if @products.count == 0 %>
-    <div class="container">
+  <div class="container">
+    <% if number_product == 0 %>
       <div class="container-empty-cart">
         <div class="content-img">
           <%= image_tag("empty-cart.png") %>
@@ -8,8 +10,55 @@
         <p class="my-4">Su carrito está vacío.</p>
         <%= link_to 'volver a la tienda', products_path %>
       </div>
-    </div>
-  <% else %>
-
-  <% end %>
+    <% else %>
+      <div class="container-list-product-cart">
+        <p class="title">Carrito de Compras.</p>
+        <div class="content-buy-product">
+          <div class="container-list-products">
+            <% @products_in_cart.each do |shopping_cart_product| %>
+              <div class="item-product my-3 lead">
+                <div class="product-img">
+                  <% if shopping_cart_product.product.id <= 5 %>
+                    <%= image_tag("product-a#{shopping_cart_product.product.id}.jpg") %>
+                  <% else %>
+                    <%= image_tag("product-a4.jpg") %>
+                  <% end %>
+                </div>
+                <div class="content-description">
+                  <p class="text-muted">
+                    <span><%= shopping_cart_product.product.title %></span>
+                    <span class="me-3">
+                      <%= link_to product_likes_path(:product => shopping_cart_product.product), method: :post do %>
+                        <i class="fa fa-heart"></i>
+                      <% end %>
+                      &nbsp;
+                      <a href=""><i class="far fa-trash-alt"></i></a>
+                    </span>
+                  </p>
+                  <p>
+                    <span>S/<%= shopping_cart_product.product.price %></span>
+                    <span class="me-3 add-or-minus-products">
+                      <a href=""><i class="fas fa-minus"></i></a>
+                      &nbsp;&nbsp;<%= shopping_cart_product.quantity %>&nbsp;&nbsp;
+                      <a href=""><i class="fas fa-plus"></i></a>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="container-total-pagar ms-3 mt-3">
+            <h4 class="ms-3 mt-3">Resumen</h4>
+            <p class="ms-3 mt-2"><%= number_product %> productos</p>
+            <p class="mx-3 mt-2 total">
+              <span>Total a Pagar</span><span class="text-rigth"> S/<%= @total %></span>
+            </p>
+            <div class="mx-3 mb-3">
+              <a href="" class="">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </section>

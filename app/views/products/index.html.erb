@@ -1,11 +1,11 @@
-<div style="background-color: #F1FAF8;">
+<div style="background-color: #F5F5F5;">
   <div class="container" style="padding: 20px 0;">
     <div class="auto-grid">
       <% @products.each_with_index do |product, index| %>
         <div class="product-grid">
             <div class="product-image">
               <%= link_to product do %>
-                <% if product.id <= 5 %>
+                <% if product.id <= 10 %>
                   <%= image_tag("product-a#{product.id}.jpg", class: 'pic-1') %>
                   <%= image_tag("product-b#{product.id}.jpg", class: 'pic-2') %>
                 <% else %>

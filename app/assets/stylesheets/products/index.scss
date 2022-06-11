@@ -117,6 +117,12 @@
   bottom: 0;
 }
 
+.product-rating a{
+  color: #000;
+  &:hover{
+    color: #BDD239;
+  }
+}
 .product-grid .rating {
   padding: 0;
   margin: 0;

@@ -16,6 +16,19 @@ class ShoppingCartProductsController < ApplicationController
     end
   end
 
+  def update
+    shopping_cart_product = ShoppingCartProduct.find(params[:id])
+    quantity = shopping_cart_product.quantity + params[:quantity].to_i
+    shopping_cart_product.update(quantity: quantity)
+    redirect_to shopping_carts_path
+  end
+
+  def destroy
+    shopping_cart_product = ShoppingCartProduct.find(params[:id])
+    shopping_cart_product.destroy
+    redirect_to shopping_carts_path
+  end
+
   private
 
   def add_quantity

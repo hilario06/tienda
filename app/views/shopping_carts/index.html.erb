@@ -25,22 +25,28 @@
                   <% end %>
                 </div>
                 <div class="content-description">
-                  <p class="text-muted">
+                  <p class="text-muted pt-2">
                     <span><%= shopping_cart_product.product.title %></span>
                     <span class="me-3">
                       <%= link_to product_likes_path(:product => shopping_cart_product.product), method: :post do %>
                         <i class="fa fa-heart"></i>
                       <% end %>
                       &nbsp;
-                      <a href=""><i class="far fa-trash-alt"></i></a>
+                      <%= link_to shopping_cart_product_path(shopping_cart_product), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <i class="far fa-trash-alt"></i>
+                      <% end %>
                     </span>
                   </p>
                   <p>
                     <span>S/<%= shopping_cart_product.product.price %></span>
                     <span class="me-3 add-or-minus-products">
-                      <a href=""><i class="fas fa-minus"></i></a>
+                      <%= link_to shopping_cart_product_path(shopping_cart_product,:quantity => -1), method: :patch do %>
+                        <i class="fas fa-minus"></i>
+                      <% end %>
                       &nbsp;&nbsp;<%= shopping_cart_product.quantity %>&nbsp;&nbsp;
-                      <a href=""><i class="fas fa-plus"></i></a>
+                      <%= link_to shopping_cart_product_path(shopping_cart_product,:quantity => 1), method: :patch do %>
+                        <i class="fas fa-plus"></i>
+                      <% end %>
                     </span>
                   </p>
                 </div>

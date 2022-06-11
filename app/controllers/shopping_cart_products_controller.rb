@@ -1,5 +1,7 @@
 class ShoppingCartProductsController < ApplicationController
   def create
+    return redirect_to products_path, notice: 'Producto ya agregado' if is_product_add?
+
     @shopping_cart_product = ShoppingCartProduct.new
     @shopping_cart_product.product_id = params[:product_id]
     shopping_cart = current_user.shopping_cart
@@ -37,5 +39,9 @@ class ShoppingCartProductsController < ApplicationController
     else
       @shopping_cart_product.quantity = params[:quantity]
     end
+  end
+
+  def is_product_add?
+    @shopping_cart_product = ShoppingCartProduct.find_by(product_id: params[:product_id], shopping_cart_id: current_user.shopping_cart)
   end
 end

@@ -18,7 +18,7 @@
             <% @products_in_cart.each do |shopping_cart_product| %>
               <div class="item-product my-3 lead">
                 <div class="product-img">
-                  <% if shopping_cart_product.product.id <= 5 %>
+                  <% if shopping_cart_product.product.id <= 10 %>
                     <%= image_tag("product-a#{shopping_cart_product.product.id}.jpg") %>
                   <% else %>
                     <%= image_tag("product-a4.jpg") %>

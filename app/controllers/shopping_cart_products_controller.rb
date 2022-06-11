@@ -1,6 +1,6 @@
 class ShoppingCartProductsController < ApplicationController
   def create
-    return redirect_to products_path, notice: 'Producto ya agregado' if is_product_add?
+    return redirect_to products_path, notice: 'El producto ya fue agregado' if is_product_add?
 
     @shopping_cart_product = ShoppingCartProduct.new
     @shopping_cart_product.product_id = params[:product_id]

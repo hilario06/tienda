@@ -42,7 +42,11 @@
             <%= link_to shopping_carts_path, class: 'position-relative cart-style' do %>
               <i class="fas fa-shopping-cart"></i>
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-                9
+                <% if current_user.shopping_cart %>
+                  <%= current_user.shopping_cart.products.count %>
+                <% else %>
+                  0
+                <% end %>
               </span>
             <% end %>
           </li>

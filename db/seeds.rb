@@ -20,38 +20,50 @@ user3.password= 'password'
 user3.password_confirmation= 'password'
 user3.save
 
-category1 = Category.find_or_initialize_by(name: 'carnes')
+category1 = Category.find_or_initialize_by(name: 'verduras')
 category1.save
-product1 = Product.find_or_initialize_by(title: 'pescado bonito 1k',
-            code: '001', price: 10000, stock: 20,
-            description: 'El atún blanco, bonito del norte', category: category1)
-product1.save
-
-product2 = Product.find_or_initialize_by(title: 'pescado jurel 1k',
-            code: '002', price: 15000, stock: 40,
-            description: 'El jurel chileno, jurel del Pacífico sur o, simplemente', category: category1)
-product2.save
-
-
-category2 = Category.find_or_initialize_by(name: 'verduras')
+category2 = Category.find_or_initialize_by(name: 'frutas')
 category2.save
-product_v1 = Product.find_or_initialize_by(title: 'tomate',
-            code: '011', price: 15000, stock: 23,
-            description: 'tomates traidos desde chanchamayo', category: category2)
-product_v1.save
-product_v2 = Product.find_or_initialize_by(title: 'zanahoria',
-            code: '012', price: 15000, stock: 40,
-            description: 'zanahoria traidos desde chanchamayo', category: category2)
-product_v2.save
-
-category3 = Category.find_or_initialize_by(name: 'abarrotes')
+category3 = Category.find_or_initialize_by(name: 'carnes')
 category3.save
-product_a1 = Product.find_or_initialize_by(title: 'leche',
-            code: '021', price: 15000, stock: 35,
-            description: 'leche gloria', category: category3)
-product_a1.save
 
-product_a2 = Product.find_or_initialize_by(title: 'aceite',
-            code: '022', price: 15000, stock: 37,
-            description: 'aceite primor', category: category3)
-product_a2.save
+product1 = Product.find_or_initialize_by(title: 'zanahoria',
+            code: '001', price: 5, stock: 20,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category1)
+product1.save
+product2 = Product.find_or_initialize_by(title: 'uvas',
+            code: '002', price: 3, stock: 40,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category2)
+product2.save
+product3 = Product.find_or_initialize_by(title: 'jengibre',
+            code: '011', price: 8, stock: 23,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category1)
+product3.save
+product4 = Product.find_or_initialize_by(title: 'berenjena',
+            code: '012', price: 9, stock: 10,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category1)
+product4.save
+product5 = Product.find_or_initialize_by(title: 'manzana',
+            code: '021', price: 4, stock: 35,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category2)
+product5.save
+product6 = Product.find_or_initialize_by(title: 'cebolla',
+            code: '022', price: 2, stock: 37,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category1)
+product6.save
+product7 = Product.find_or_initialize_by(title: 'limon',
+            code: '031', price: 3, stock: 40,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category1)
+product7.save
+product8 = Product.find_or_initialize_by(title: 'kiwi',
+            code: '032', price: 9, stock: 15,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category2)
+product8.save
+product9 = Product.find_or_initialize_by(title: 'repollo',
+            code: '033', price: 4, stock: 13,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category1)
+product9.save
+product10 = Product.find_or_initialize_by(title: 'durazno',
+            code: '034', price: 5, stock: 8,
+            description: 'Quot semper vivendo ad vix, qui ad diam lucilius repudiare. Autem voluptua ius id. Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut', category: category2)
+product10.save

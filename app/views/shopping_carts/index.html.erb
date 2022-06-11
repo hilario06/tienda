@@ -40,8 +40,12 @@
                   <p>
                     <span>S/<%= shopping_cart_product.product.price %></span>
                     <span class="me-3 add-or-minus-products">
-                      <%= link_to shopping_cart_product_path(shopping_cart_product,:quantity => -1), method: :patch do %>
-                        <i class="fas fa-minus"></i>
+                      <% if shopping_cart_product.quantity != 1 %>
+                        <%= link_to shopping_cart_product_path(shopping_cart_product,:quantity => -1), method: :patch do %>
+                          <i class="fas fa-minus"></i>
+                        <% end %>
+                      <% else %>
+                        <i class="fas fa-minus disable"></i>
                       <% end %>
                       &nbsp;&nbsp;<%= shopping_cart_product.quantity %>&nbsp;&nbsp;
                       <%= link_to shopping_cart_product_path(shopping_cart_product,:quantity => 1), method: :patch do %>

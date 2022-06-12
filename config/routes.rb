@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :shopping_cart_products, only: %i[create destroy update]
   resources :charges, only: %i[index new create]
   # resources :charges
+  get "payu/response", to: "payu#result"
+  post "payu/confirmation", to: "payu#confirmation"
 end

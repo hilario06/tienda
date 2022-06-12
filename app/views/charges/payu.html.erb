@@ -1,0 +1,21 @@
+ <h1>Redireccionando a PayU, espera un momento ...</h1>
+
+ <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/" class="enviar-monto">
+  <input name="merchantId"      type="hidden"  value="<%= ENV["PAYU_MERCHANT_ID"] %>"   >
+  <input name="accountId"       type="hidden"  value="<%= ENV["PAYU_ACCOUNT_ID"] %>" >
+  <input name="description"     type="hidden"  value="Pago de la compra de productos"  >
+  <input name="referenceCode"   type="hidden"  value="<%= @charge.uid %>" >
+  <input name="amount"          type="hidden"  value="<%= @charge.amount %>"   >
+  <input name="tax"             type="hidden"  value="0"  >
+  <input name="taxReturnBase"   type="hidden"  value="0" >
+  <input name="currency"        type="hidden"  value="COP" >
+  <input name="signature"       type="hidden"  value="<%= @signature %>"  >
+  <input name="test"            type="hidden"  value="1" >
+  <input name="responseUrl"     type="hidden"  value="<%= ENV["HOSTNAME"] %>/payu/response" >
+  <input name="confirmationUrl" type="hidden"  value="<%= ENV["HOSTNAME"] %>/payu/confirmation" >
+  <!--<input name="Submit"          type="submit"  value="Enviar" >-->
+</form>
+
+<script>
+  document.querySelector('.enviar-monto').submit();
+</script>

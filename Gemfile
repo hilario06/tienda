@@ -61,5 +61,6 @@ gem 'font-awesome-sass', '~> 6.1', '>= 6.1.1'
 gem 'annotate', '~> 3.2'
 gem 'faker', '~> 2.21'
 gem 'table_print', '~> 1.5', '>= 1.5.7'
+gem 'figaro', '~> 1.2'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'

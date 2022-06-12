@@ -1,0 +1,18 @@
+<div class="charge-form pt-4">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-5">
+        <%= form_for @charge do |f| %>
+          <div class="form-group">
+            <%= f.label :amount %>
+            <%= f.text_field :amount, class: 'form-control' %>
+          </div>
+          <div>
+            <%= link_to "cancel", root_path, class: "btn btn-outline-secondary" %>
+            <%= f.submit "Ir a Pagar", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

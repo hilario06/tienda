@@ -1,8 +1,21 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
+  # def index
+  #   if params[:query].present?
+  #     @books = policy_scope(Book).where("title ILIKE ?  OR author ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+
+  #   else
+  #   @books = policy_scope(Book).order(created_at: :desc)
+  #   end
+  # end
   def index
-    @products = Product.all
+    if params[:query].present?
+      # @products = Product.where(title: params[:query])
+      @products = Product.global_search(params[:query])
+    else
+      @products = Product.all
+    end
   end
 
   def show
@@ -24,8 +37,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @product.update(product_params)

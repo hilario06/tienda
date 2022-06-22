@@ -18,4 +18,15 @@ class Product < ApplicationRecord
   has_many :product_likes
   has_many :reviews
   has_many :product_user_reviews, through: :reviews, source: :user # no estoy usando de momento
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :title, :description ],
+    associated_against: {
+      category: [ :name ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end

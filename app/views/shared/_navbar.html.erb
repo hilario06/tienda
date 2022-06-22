@@ -31,10 +31,13 @@
           <%= link_to "Lista de Deseos", product_likes_path, class: 'nav-link' %>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <%= form_tag products_path,class: "d-flex", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class:"form-control",
+          placeholder: "Zanahoria, " "Manzana" %>
+        <%= submit_tag "Buscar", class: "btn btn-outline-success my-2 my-sm-0 mr-sm-2"%>
+      <% end %>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <!--<li class="nav-item">
           <%= link_to shopping_carts_path, class: 'nav-link pe-0' do %>

@@ -21,7 +21,7 @@ class PayuController < ApplicationController
     end
 
     charge.update!(response_data: params.as_json)
-
+    raise
     if params[:sign] != signature(charge, params[:state_pol])
       update_status(charge, params[:state_pol])
       update_payment_method(charge, params[:payment_method_type])

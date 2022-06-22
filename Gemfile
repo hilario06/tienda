@@ -62,5 +62,7 @@ gem 'annotate', '~> 3.2'
 gem 'faker', '~> 2.21'
 gem 'table_print', '~> 1.5', '>= 1.5.7'
 gem 'figaro', '~> 1.2'
+# para realizar las busquedas
+gem 'pg_search', '~> 2.3', '>= 2.3.6'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'

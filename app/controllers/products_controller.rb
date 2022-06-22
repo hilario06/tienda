@@ -28,9 +28,12 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @product
+  end
 
   def update
+    authorize @product
     if @product.update(product_params)
       redirect_to product_url(@product)
     else

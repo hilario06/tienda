@@ -1,5 +1,5 @@
 class PayuController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:confirmation]
+  skip_before_action :verify_authenticity_token, only: %i[confirmation]
 
   def result
     @charge =  Charge.where(uid: params[:referenceCode]).take
@@ -21,7 +21,6 @@ class PayuController < ApplicationController
     end
 
     charge.update!(response_data: params.as_json)
-    raise
     if params[:sign] != signature(charge, params[:state_pol])
       update_status(charge, params[:state_pol])
       update_payment_method(charge, params[:payment_method_type])

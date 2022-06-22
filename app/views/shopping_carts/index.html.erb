@@ -64,7 +64,7 @@
               <span>Total a Pagar</span><span class="text-rigth"> S/<%= @total %></span>
             </p>
             <div class="mx-3 mb-3">
-              <a href="" class="">Pagar</a>
+              <%= link_to 'Pagar', charges_path(:amount => @total), method: :post %>
             </div>
           </div>
         </div>

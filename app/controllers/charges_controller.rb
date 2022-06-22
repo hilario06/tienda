@@ -3,12 +3,13 @@ class ChargesController < ApplicationController
     @charges = Charge.all
   end
 
-  def new
-    @charge = Charge.new
-  end
+  # def new
+  #   @charge = Charge.new
+  # end
 
   def create
-    @charge = Charge.new(charge_params)
+    # @charge = Charge.new(charge_params)
+    @charge = Charge.new(amount: params[:amount])
     @charge.user = current_user
     @charge.shopping_cart = current_user.shopping_cart
     if @charge.save

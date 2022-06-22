@@ -25,17 +25,13 @@
             </div>
             <%= f.submit 'Add to cart', class: '' %>
           <% end %>
-          <!--<form action="">
-            <div class="quantity">
-              <input type="number" min="1" step="1" name="" id="" size="4" value="1" autocomplete="off">
-            </div>
-            <button type="submit">Add to cart</button>
-          </form>-->
           <%= link_to edit_product_path(@product), class: 'edit' do %>
             <i class="far fa-edit"></i>
           <% end %>
-          <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
-            <i class="far fa-trash-alt"></i>
+          <% if policy(Product).destroy? %>
+            <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
           <% end %>
         </div>
         <p class="anadir-lista-product">

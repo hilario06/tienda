@@ -1,1 +1,79 @@
-<h3>Holis</h3>
+<div class="container">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <div class="container-carousel-products">
+          <div class="content-description" style="background-image: url(<%= asset_path 'product-a2.jpg' %>);">
+            <div>
+              <h4 class="my-2">NOVEDADES 2022</h4>
+              <h5 class="my-3">zanahoria</h5>
+              <p class="my-4">Your baby deserves the best car in the world. Limited stocks available in our Store.</p>
+              <a href="">Añadir al Carrito de Compras</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <div class="container-carousel-products">
+          <div class="content-description" style="background-image: url(<%= asset_path 'product-a4.jpg' %>);">
+            <div>
+              <h4 class="my-2">NOVEDADES 2022</h4>
+              <h5 class="my-3">zanahoria</h5>
+              <p class="my-4">Your baby deserves the best car in the world. Limited stocks available in our Store.</p>
+              <a href="">Añadir al Carrito de Compras</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container-carousel-products">
+          <div class="content-description" style="background-image: url(<%= asset_path 'product-a5.jpg' %>);">
+            <div>
+              <h4 class="my-2">NOVEDADES 2022</h4>
+              <h5 class="my-3">zanahoria</h5>
+              <p class="my-4">Your baby deserves the best car in the world. Limited stocks available in our Store.</p>
+              <a href="">Añadir al Carrito de Compras</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <!--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<section class="container mt-5">
+  <h2 class="text-center mb-5">Comprar por categorías</h2>
+  <!--<h3>categorías principales</h3>-->
+  <div class="container-list-categories">
+    <% @categories.each do |category| %>
+      <div class="item-category">
+        <div class="container-img">
+          <% if category.id <= 3 %>
+            <%= image_tag("category#{category.id}.jpg") %>
+          <% else %>
+            <%= image_tag("category1.jpg") %>
+          <% end %>
+        </div>
+        <p class="text-center">
+          <a href=""><%= category.name %></a>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</section>
+<section class="container">
+  <p>Conectarse</p>
+  <h2>Subscribe <span>Newsletter</span></h2>
+</section>

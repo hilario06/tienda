@@ -13,7 +13,11 @@ class ProductsController < ApplicationController
   def show
     @review = Review.new
     @shopping_cart_product = ShoppingCartProduct.new
-    @reviews = @product.reviews.order('created_at DESC').includes([:user])
+    if user_signed_in?
+      @reviews = @product.reviews.order('created_at DESC').includes([:user])
+    else
+      @reviews = @product.reviews.order('created_at DESC')
+    end
   end
 
   def new

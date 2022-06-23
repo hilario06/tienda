@@ -110,6 +110,9 @@
   bottom: -60px;
   left: 0;
   transition: all .2s ease-in-out 0s;
+  a{
+    font-size: 15px;
+  }
 }
 
 .product-grid:hover .product-rating {

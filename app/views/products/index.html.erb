@@ -48,12 +48,12 @@
                       <li class="far fa-star"></li>
                       <li class="far fa-star"></li>
                   </ul>
-                  <%= link_to ' ADD TO CART ', shopping_cart_products_path(:quantity => 1, :product_id => product.id), method: :post %>
+                  <%= link_to ' AÑADIR AL CARRITO ', shopping_cart_products_path(:quantity => 1, :product_id => product.id), method: :post %>
               </div>
             </div>
             <div class="product-content">
-                <h3 class="title"><%= link_to "Women's Tshirt", product %></h3>
-                <div class="price">$19.00</div>
+                <h3 class="title"><%= link_to product.title, product %></h3>
+                <div class="price">$ <%= product.price %></div>
             </div>
         </div>
       <% end %>

@@ -9,21 +9,18 @@
         <% end %>
       </div>
       <div class="container-info-product">
-        <h3>Accer Nitro-5 Laptop</h3>
+        <h3><%= @product.title %></h3>
         <p class="price-product">
-          <span>$160.00</span>
-          <span>$200.00</span>
+          <span>$<%= @product.price %></span>
+          <span>$<%= @product.price + 1 %></span>
         </p>
-        <p class="description-product">Quot semper vivendo ad vix, qui ad diam lucilius repudiare.
-        Autem voluptua ius id.
-        Invenire antiopam qualisque ne per, ei vim legimus accusam, tale nulla vim ut
-        </p>
+        <p class="description-product"><%= @product.description %></p>
         <div class="buttons-add-to-cart-edit-delete">
           <%= simple_form_for([ @product, @shopping_cart_product ]) do |f| %>
             <div class="quantity">
               <%= f.input :quantity, label: false, input_html: { min: '1' } %>
             </div>
-            <%= f.submit 'Add to cart', class: '' %>
+            <%= f.submit 'Añadir al carrito de compras', class: '' %>
           <% end %>
           <% if user_signed_in? && policy(Product).edit? %>
             <%= link_to edit_product_path(@product), class: 'edit' do %>
@@ -41,7 +38,7 @@
             <i class="fa fa-heart"></i> &nbsp;Añadir lista de deseos
           <% end %>
         </p>
-        <p><span>SKU: </span> 10</p>
+        <p><span>SKU: </span> <%= @product.stock %></p>
       </div>
     </div>
     <div class="container-reviews">

@@ -24,16 +24,21 @@
                     <%= link_to product_likes_path(:product => product), method: :post do %>
                       <i class="fa fa-heart"></i>
                     <% end %>
-                  <li>
-                    <%= link_to edit_product_path(product), style: 'color: #fff; background-color: blue;' do %>
-                      <i class="far fa-edit"></i>
-                    <% end %>
                   </li>
-                  <li>
-                    <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, style: 'color: #fff; background-color: red;' do %>
-                      <i class="far fa-trash-alt"></i>
-                    <% end %>
-                  </li>
+                  <% if user_signed_in? && policy(Product).edit? %>
+                    <li>
+                      <%= link_to edit_product_path(product), style: 'color: #fff; background-color: blue;' do %>
+                        <i class="far fa-edit"></i>
+                      <% end %>
+                    </li>
+                  <% end %>
+                  <% if user_signed_in? && policy(Product).destroy? %>
+                    <li>
+                      <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, style: 'color: #fff; background-color: red;' do %>
+                        <i class="far fa-trash-alt"></i>
+                      <% end %>
+                    </li>
+                  <% end %>
               </ul>
               <div class="product-rating">
                   <ul class="rating">

@@ -1,9 +1,14 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <div class="text-center mt-3">
+   ¿Ya tienes cuenta? <%= link_to "Inicia sesión aquí", new_session_path(resource_name) %><br />
+  </div>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <p class="text-center mt-3">¿Aún no tienes cuenta en nuestra <b>Tienda</b>?</p>
+  <div class="form-actions d-grid mt-3 mb-2">
+    <%= link_to "Regístrate", new_registration_path(resource_name), class: 'btn button-registrations' %>
+  </div>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

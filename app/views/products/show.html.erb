@@ -25,12 +25,12 @@
             </div>
             <%= f.submit 'Add to cart', class: '' %>
           <% end %>
-          <% if policy(Product).edit? %>
+          <% if user_signed_in? && policy(Product).edit? %>
             <%= link_to edit_product_path(@product), class: 'edit' do %>
               <i class="far fa-edit"></i>
             <% end %>
           <% end %>
-          <% if policy(Product).destroy? %>
+          <% if user_signed_in? && policy(Product).destroy? %>
             <%= link_to @product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete' do %>
               <i class="far fa-trash-alt"></i>
             <% end %>
@@ -70,7 +70,6 @@
               </ul>
               <small>Admin – <%= review.created_at.utc.localtime("-05:00").strftime("%h %d, %Y - %I:%M %p") %></small>
               <p><%= review.content %></p>
-              <!--<p>Be The First To Review “Living Room Sofa And Interior”</p>-->
             </div>
           </div>
         <% end %>

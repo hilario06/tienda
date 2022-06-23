@@ -1,0 +1,28 @@
+.container-form-devise{
+  width: 376px;
+}
+
+.button-sesion{
+  background-color: #BDD239;
+  color: #fff;
+  border: 1px solid;
+  &:hover{
+    background-color: #fff;
+    color: #BDD239;
+  }
+}
+
+.button-registrations{
+  background-color: #fff;
+  color: #BDD239;
+  border: 1px solid;
+  &:hover{
+    background-color: #BDD239;
+    color: #fff;
+  }
+}
+@media (max-width: 400px) {
+  .container-form-devise {
+    width: 94%;
+  }
+}

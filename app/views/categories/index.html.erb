@@ -1,0 +1,27 @@
+<section class="container">
+  <p class="text-end mt-5">
+    <%= link_to 'Nueva Categoria', new_category_path, class: 'btn btn-primary' %>
+  </p>
+  <div class="container-auto-grid mt-3">
+    <% @categories.each do |category| %>
+      <div class="card item-category mx-2 mb-4">
+        <% if category.id <= 3 %>
+          <%= image_tag("category#{category.id}.jpg", class: 'card-img-top') %>
+        <% else %>
+          <%= image_tag("category1.jpg", class: 'card-img-top') %>
+        <% end %>
+        <div class="card-body">
+          <p class="card-text text-center"><%= category.name %></p>
+          <p  class="card-text text-center">
+            <%= link_to edit_category_path(category) do %>
+              <i class="far fa-edit"></i>
+            <% end %> &nbsp;&nbsp;
+            <%= link_to category, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

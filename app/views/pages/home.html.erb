@@ -58,7 +58,7 @@
   <!--<h3>categorías principales</h3>-->
   <div class="container-list-categories">
     <% @categories.each do |category| %>
-      <div class="item-category">
+      <div class="item-category mb-4">
         <div class="container-img">
           <% if category.id <= 3 %>
             <%= image_tag("category#{category.id}.jpg") %>

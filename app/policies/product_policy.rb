@@ -7,7 +7,8 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    # user.admin es igual user.admin?
+    user.admin?
   end
 
   def update?

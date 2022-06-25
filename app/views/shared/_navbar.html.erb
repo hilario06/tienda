@@ -16,6 +16,11 @@
         <li class="nav-item">
           <%= link_to 'Mis compras', charges_path, class: 'nav-link' %>
         </li>
+        <% if user_signed_in? && policy(Category).index? %>
+          <li class="nav-item">
+            <%= link_to 'Categorías', categories_path, class: 'nav-link' %>
+          </li>
+        <% end %>
         <!--<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown

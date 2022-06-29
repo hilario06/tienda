@@ -1,11 +1,11 @@
 .container-list-categories{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 1rem;
+  // grid-auto-rows: 22rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   .item-category{
-    width: 31%;
     .container-img{
-      height: 200px;
+      height: 240px;
       overflow: hidden;
       &:hover{
         img{

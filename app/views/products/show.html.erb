@@ -1,7 +1,7 @@
 <div style="margin:25px;">
   <div class="container">
     <div class="container-products-show">
-      <div>
+      <div class="container-img">
         <% if @product.id <= 10 %>
           <%= image_tag("product-a#{@product.id}.jpg") %>
         <% else %>
@@ -20,7 +20,7 @@
             <div class="quantity">
               <%= f.input :quantity, label: false, input_html: { min: '1' } %>
             </div>
-            <%= f.submit 'Añadir al carrito de compras', class: '' %>
+            <%= f.submit 'Añadir al carrito', class: '' %>
           <% end %>
           <% if user_signed_in? && policy(Product).edit? %>
             <%= link_to edit_product_path(@product), class: 'edit' do %>

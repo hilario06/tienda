@@ -85,6 +85,7 @@
         width: 30%;
         background-color: #fff;
         align-self: flex-start;
+        margin-left: 15px;
         .total{
           display: flex;
           justify-content: space-between;
@@ -101,6 +102,27 @@
             background-color: #FFF;
             color: #BDD239;
           }
+        }
+      }
+      @media (max-width: 991px) {
+        .container-list-products{
+          width: 60%;
+        }
+        .container-total-pagar{
+          width: 40%;
+        }
+      }
+    }
+    @media (max-width: 767px){
+      .content-buy-product{
+        flex-direction: column;
+        .container-list-products{
+          width: 100%;
+        }
+        .container-total-pagar{
+          width: 100%;
+          margin-left: 0;
+          margin-bottom: 15px;
         }
       }
     }

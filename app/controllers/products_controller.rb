@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    authorize @product
     @review = Review.new
     @shopping_cart_product = ShoppingCartProduct.new
     if user_signed_in?

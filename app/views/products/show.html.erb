@@ -44,8 +44,13 @@
     <div class="container-reviews">
       <h6><span>Comentarios (<%= @reviews.count %>)</span></h6>
       <h6>Comentarios</h6>
+
       <% if @reviews.blank? %>
-        <p><i class="far fa-comment-alt"></i>&nbsp; Sé el primero en dejar un comentario</p>
+        <% if user_signed_in? %>
+          <p><i class="far fa-comment-alt"></i>&nbsp; Sé el primero en dejar un comentario</p>
+        <% else %>
+          <p><i class="far fa-comment-alt"></i>&nbsp; Sé el primero en dejar un comentario pero antes debe de iniciar sesión</p>
+        <% end %>
       <% else %>
         <% @reviews.each do |review| %>
           <div class="container-list-reviews my-4">

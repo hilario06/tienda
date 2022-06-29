@@ -11,6 +11,10 @@ class ProductPolicy < ApplicationPolicy
     user.admin?
   end
 
+  def show?
+    true
+  end
+
   def update?
     user.admin
   end

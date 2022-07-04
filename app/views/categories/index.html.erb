@@ -29,9 +29,11 @@
             </p>
           <% else %>
             <p class="card-text text-center icons-edit-delete">
-              <%= link_to category_restore_path(category), method: :post do %>
-                <i class="fas fa-trash-restore"></i>
-              <% end %>
+              <% if user_signed_in? && policy(Category).restore? %>
+                <%= link_to category_restore_path(category), method: :post do %>
+                  <i class="fas fa-trash-restore"></i>
+                <% end %>
+               <% end %>
             </p>
           <% end %>
         </div>

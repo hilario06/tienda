@@ -41,6 +41,7 @@ class CategoriesController < ApplicationController
 
   def restore
     @category = Category.restore(params[:category_id])
+    authorize @category
     redirect_to categories_path
   end
 

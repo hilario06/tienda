@@ -66,5 +66,7 @@ gem 'figaro', '~> 1.2'
 gem 'pg_search', '~> 2.3', '>= 2.3.6'
 # otorgar authorizacion
 gem 'pundit', '~> 2.2'
+# para cambiar el estado cuando borramos un registro de la bd
+gem 'paranoia', '~> 2.6'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'

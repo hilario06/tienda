@@ -8,5 +8,6 @@
 #  updated_at :datetime         not null
 #
 class Category < ApplicationRecord
+  acts_as_paranoid  # de la gema paranoia
   has_many :products
 end

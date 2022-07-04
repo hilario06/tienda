@@ -39,6 +39,11 @@ class CategoriesController < ApplicationController
     redirect_to categories_url
   end
 
+  def restore
+    @category = Category.restore(params[:category_id])
+    redirect_to categories_path
+  end
+
   private
 
   def set_category

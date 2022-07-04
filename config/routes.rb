@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :categories
+  resources :categories do
+    # categories/:category_id/restore
+    post 'restore'
+  end
   resources :products do
     resources :reviews, only: :create
     resources :shopping_cart_products, only: :create # creando desde el show product

@@ -7,7 +7,8 @@ class CategoryPolicy < ApplicationPolicy
     # end
 
     def resolve
-      scope.all
+      # scope.all
+      scope.with_deleted.order('id ASC')
     end
   end
 

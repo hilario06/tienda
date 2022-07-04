@@ -14,18 +14,26 @@
         <% end %>
         <div class="card-body">
           <p class="card-text text-center"><%= category.name %></p>
-          <p  class="card-text text-center icons-edit-delete">
-            <% if user_signed_in? && policy(Category).edit? %>
-              <%= link_to edit_category_path(category) do %>
-                <i class="far fa-edit"></i>
+          <% unless category.deleted_at %>
+            <p  class="card-text text-center icons-edit-delete">
+              <% if user_signed_in? && policy(Category).edit? %>
+                <%= link_to edit_category_path(category) do %>
+                  <i class="far fa-edit"></i>
+                <% end %>
+              <% end %> &nbsp;&nbsp;
+              <% if user_signed_in? && policy(Category).destroy? %>
+                <%= link_to category, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
               <% end %>
-            <% end %> &nbsp;&nbsp;
-            <% if user_signed_in? && policy(Category).destroy? %>
-              <%= link_to category, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <i class="far fa-trash-alt"></i>
+            </p>
+          <% else %>
+            <p class="card-text text-center icons-edit-delete">
+              <%= link_to category_restore_path(category), method: :post do %>
+                <i class="fas fa-trash-restore"></i>
               <% end %>
-            <% end %>
-          </p>
+            </p>
+          <% end %>
         </div>
       </div>
     <% end %>

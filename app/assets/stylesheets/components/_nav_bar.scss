@@ -1,7 +1,49 @@
+.search-nav-tienda{
+  button{
+    border: 1px solid #ced4da;
+    color: rgba(0, 0, 0, 0.55);
+    &:hover{
+      border: 1px solid rgb(189, 210, 57);
+      background-color: rgb(189, 210, 57);
+      color: #fff;
+    }
+  }
+}
 .cart-style{
   color:rgba(0, 0, 0, 0.55);
   margin-left: 5px;
   &:hover{
     color: #4A4A4B;
+  }
+  .icon-tienda-nav{
+    width: 30px;
+    height: 30px;
+    line-height: 24px;
+    background-color: rgb(234, 220, 220);
+    &:hover{
+      background-color: rgb(189, 210, 57);
+    }
+    i{
+      font-size: 14px;
+      color: #000;
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+  span{
+    // background-color: rgb(56, 188, 158);
+    background-color: rgb(133, 133, 133);
+  }
+}
+.btn-group-tienda{
+  .dropdown-toggle::after {
+    content: none;
+  }
+  a{
+    color:rgba(0, 0, 0, 0.55);
+    &:hover {
+      color: #4A4A4B;
+    }
   }
 }

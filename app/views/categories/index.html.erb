@@ -1,6 +1,6 @@
 <section class="container">
   <% if user_signed_in? && policy(Category).new? %>
-    <p class="text-end mt-5 new-category">
+    <p class="text-end mt-3 new-category">
       <%= link_to 'Nueva Categoria', new_category_path, class: 'btn' %>
     </p>
     <% end %>

@@ -28,7 +28,8 @@
                   <p class="text-muted pt-2">
                     <span><%= shopping_cart_product.product.title %></span>
                     <span class="me-3">
-                      <%= link_to product_likes_path(:product => shopping_cart_product.product), method: :post do %>
+                      <!--a_like_from (1: lista de productos, 2: show products, 3: shopping cart)-->
+                      <%= link_to product_likes_path(:product => shopping_cart_product.product, :a_like_from => 3), method: :post do %>
                         <i class="fa fa-heart"></i>
                       <% end %>
                       &nbsp;

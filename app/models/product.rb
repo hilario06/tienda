@@ -13,6 +13,8 @@
 #  updated_at  :datetime         not null
 #
 class Product < ApplicationRecord
+  acts_as_paranoid  # de la gema paranoia
+
   belongs_to :category
   has_many :shopping_cart_products
   has_many :product_likes

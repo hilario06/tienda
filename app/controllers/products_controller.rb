@@ -23,10 +23,12 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
     @product = Product.new(product_params)
+    authorize @product
     if @product.save
       redirect_to product_url(@product), notice: "Producto creado"
     else
@@ -51,6 +53,12 @@ class ProductsController < ApplicationController
     authorize @product
     @product.destroy
     redirect_to products_url
+  end
+
+  def restore
+    @category = Product.restore(params[:product_id])
+    authorize @category
+    redirect_to categories_path
   end
 
   private

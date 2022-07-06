@@ -1,5 +1,8 @@
-<div style="background-color: #F5F5F5" class="pt-4 pb-4">
+<section style="background-color: #F5F5F5" class="pt-4 pb-4">
   <div class="container">
+    <p class="text-end new-category">
+      <%= link_to 'Nuevo Producto', new_product_path, class: 'btn' %>
+    </p>
     <div class="auto-grid">
       <% @products.each_with_index do |product, index| %>
         <div class="product-grid">
@@ -60,4 +63,4 @@
       <% end %>
     </div>
   </div>
-</div>
+</section>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :products do
     resources :reviews, only: :create
     resources :shopping_cart_products, only: :create # creando desde el show product
+    # products/:product_id/restore
+    post 'restore'
   end
   resources :product_likes, only: %i[index create destroy]
   resources :reviews, only: :destroy

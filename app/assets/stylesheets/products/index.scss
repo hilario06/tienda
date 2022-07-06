@@ -69,6 +69,7 @@
   position: absolute;
   top: 15px;
   right: 7px;
+  z-index: 1;
 }
 
 .product-grid .social li {
@@ -110,6 +111,7 @@
   bottom: -60px;
   left: 0;
   transition: all .2s ease-in-out 0s;
+  z-index: 0;
   a{
     font-size: 15px;
   }

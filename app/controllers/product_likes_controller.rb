@@ -12,6 +12,7 @@ class ProductLikesController < ApplicationController
       message_notice = 'Añadido a la lista de deseos'
     end
 
+    # a_like_from (1: lista de productos, 2: show products, 3: shopping cart)
     case params[:a_like_from].to_i
     when 1
       redirect_to products_path, notice: message_notice

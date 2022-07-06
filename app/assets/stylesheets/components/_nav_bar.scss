@@ -46,4 +46,15 @@
       color: #4A4A4B;
     }
   }
+  ul{
+    li{
+      color:#000;
+      .dropdown-item{
+        &:active{
+          background-color: rgb(189, 210, 57);
+          color:#fff;
+        }
+      }
+    }
+  }
 }

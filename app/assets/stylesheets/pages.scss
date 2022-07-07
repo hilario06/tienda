@@ -34,3 +34,23 @@
     }
   }
 }
+
+.contact-tienda{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #F7EEE2;
+  .contact-description{
+    p{
+      font-weight: 300;
+    }
+  }
+  .contact-form{
+    button{
+      background-color: #858585;
+      color: #fff;
+    }
+  }
+
+}

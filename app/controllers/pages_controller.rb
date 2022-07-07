@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @categories = Category.all
+    @products = Product.pluck(:id,:title,:description).shuffle[0..2]
   end
 end

@@ -8,49 +8,59 @@
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
         <div class="container-carousel-products">
-          <div class="content-description" style="background-image: url(<%= asset_path 'product-a2.jpg' %>);">
+          <div
+            class="content-description"
+            style="background-image: url(<%= asset_path 'product-a'+(@products[0][0] <= 10 ? @products[0][0].to_s : '10')+'.jpg' %>);"
+          >
             <div>
               <h4 class="my-2">NOVEDADES 2022</h4>
-              <h5 class="my-3">zanahoria</h5>
-              <p class="my-4">Your baby deserves the best car in the world. Limited stocks available in our Store.</p>
-              <a href="">Añadir al Carrito</a>
+              <h5 class="my-3"><%= @products[0][1] %></h5>
+              <p class="my-4"><%= @products[0][2] %></p>
+              <!--add_cart_from (1: home, 2: list products, 3: show products)-->
+              <%= link_to 'Añadir al Carrito', shopping_cart_products_path(:quantity => 1, :product_id => @products[0][0], :add_cart_from => 1), method: :post %>
             </div>
           </div>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
         <div class="container-carousel-products">
-          <div class="content-description" style="background-image: url(<%= asset_path 'product-a4.jpg' %>);">
+          <div
+            class="content-description"
+            style="background-image: url(<%= asset_path 'product-a'+(@products[1][0] <= 10 ? @products[1][0].to_s : '10')+'.jpg' %>);"
+          >
             <div>
               <h4 class="my-2">NOVEDADES 2022</h4>
-              <h5 class="my-3">zanahoria</h5>
-              <p class="my-4">Your baby deserves the best car in the world. Limited stocks available in our Store.</p>
-              <a href="">Añadir al Carrito</a>
+              <h5 class="my-3"><%= @products[1][1] %></h5>
+              <p class="my-4"><%= @products[1][2] %></p>
+              <%= link_to 'Añadir al Carrito', shopping_cart_products_path(:quantity => 1, :product_id => @products[1][0]), method: :post %>
             </div>
           </div>
         </div>
       </div>
       <div class="carousel-item">
         <div class="container-carousel-products">
-          <div class="content-description" style="background-image: url(<%= asset_path 'product-a5.jpg' %>);">
+          <div
+            class="content-description"
+            style="background-image: url(<%= asset_path 'product-a'+(@products[2][0] <= 10 ? @products[2][0].to_s : '10')+'.jpg' %>);"
+          >
             <div>
               <h4 class="my-2">NOVEDADES 2022</h4>
-              <h5 class="my-3">zanahoria</h5>
-              <p class="my-4">Your baby deserves the best car in the world. Limited stocks available in our Store.</p>
-              <a href="">Añadir al Carrito</a>
+              <h5 class="my-3"><%= @products[2][1] %></h5>
+              <p class="my-4"><%= @products[2][2] %></p>
+              <%= link_to 'Añadir al Carrito', shopping_cart_products_path(:quantity => 1, :product_id => @products[2][0]), method: :post %>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <!--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+    <!--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+    </button>-->
+    <!--<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
-    </button>
+    </button>-->
   </div>
 </div>
 <section class="container mt-5">
@@ -73,7 +83,15 @@
     <% end %>
   </div>
 </section>
-<section class="container">
-  <p>Conectarse</p>
-  <h2>Subscribe <span>Newsletter</span></h2>
+<section class="container contact-tienda mt-5 mb-5 px-4 py-5">
+  <div class="contact-description">
+    <p class="m-0">Get Connected</p>
+    <h2><span>Subscribe&nbsp;</span><span style="color:rgb(189, 210, 57)">Newsletter</span></h2>
+  </div>
+  <div class="contact-form">
+    <form action="">
+      <input type="text" name="" id="">
+      <button>Subscribe Now</button>
+    </form>
+  </div>
 </section>

@@ -46,7 +46,8 @@
           <li class="far fa-star"></li>
           <li class="far fa-star"></li>
       </ul>
-      <%= link_to 'AÑADIR AL CARRITO', shopping_cart_products_path(:quantity => 1, :product_id => product.id), method: :post %>
+      <!--add_cart_from (1: home, 2: list products, 3: show products)-->
+      <%= link_to 'AÑADIR AL CARRITO', shopping_cart_products_path(:quantity => 1, :product_id => product.id, :add_cart_from => 2), method: :post %>
   </div>
 </div>
 <div class="product-content">

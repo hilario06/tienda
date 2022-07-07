@@ -1,6 +1,8 @@
 class ShoppingCartProductsController < ApplicationController
+
   def create
-    return redirect_to products_path, notice: 'El producto ya fue agregado' if is_product_add?
+    route = is_the_route # method
+    return redirect_to route, notice: 'El producto ya fue agregado' if is_product_add?
 
     @shopping_cart_product = ShoppingCartProduct.new
     @shopping_cart_product.product_id = params[:product_id]
@@ -11,10 +13,24 @@ class ShoppingCartProductsController < ApplicationController
     @shopping_cart_product.shopping_cart_id = shopping_cart.id
     add_quantity # method
     if @shopping_cart_product.save
-      redirect_to product_url(params[:product_id]), notice: "Producto agregado al carrito"
+      redirect_to route, notice: "Producto agregado al carrito"
     else
       # redirect_to product_path(params[:product_id])
-      redirect_to product_path params[:product_id]
+      redirect_to route
+    end
+  end
+
+  def is_the_route
+    if params[:add_cart_from]
+      # add_cart_from (1: home, 2: list products, 3: show products)
+      case params[:add_cart_from].to_i
+      when 1
+        root_path
+      when 2
+        products_path
+      end
+    else
+      product_path(params[:product_id])
     end
   end
 

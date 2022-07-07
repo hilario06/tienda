@@ -1,11 +1,11 @@
 <section style="background-color: #F5F5F5" class="pt-4 pb-4">
   <div class="container">
     <p class="text-end">
-      <!-- listar productos (1:eliminados, 2: productos no eliminados) -->
       <% if user_signed_in? && policy(Product).new?%>
-      <%= link_to 'Productos No Eliminados', products_path(:is_removed_products => 2), class: 'btn btn-info', method: :get %>
-      <%= link_to 'Productos Eliminados', products_path(:is_removed_products => 1), class: 'btn btn-danger', method: :get %>
-      <%= link_to 'Nuevo Producto', new_product_path, class: 'btn btn-secondary' %>
+        <!-- listar productos (1:eliminados, 2: productos no eliminados) -->
+        <%= link_to 'Productos No Eliminados', products_path(:is_removed_products => 2), class: 'btn btn-info', method: :get %>
+        <%= link_to 'Productos Eliminados', products_path(:is_removed_products => 1), class: 'btn btn-danger', method: :get %>
+        <%= link_to 'Nuevo Producto', new_product_path, class: 'btn btn-secondary' %>
       <% end %>
     </p>
     <div class="auto-grid">

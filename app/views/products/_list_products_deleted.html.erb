@@ -1,13 +1,11 @@
 <div class="product-image">
-
-    <% if product.id <= 10 %>
-      <%= image_tag("product-a#{product.id}.jpg", class: 'pic-1') %>
-      <%= image_tag("product-b#{product.id}.jpg", class: 'pic-2') %>
-    <% else %>
-      <%= image_tag("product-a4.jpg", class: 'pic-1') %>
-      <%= image_tag("product-b4.jpg", class: 'pic-2') %>
-    <% end %>
-
+  <% if product.id <= 10 %>
+    <%= image_tag("product-a#{product.id}.jpg", class: 'pic-1') %>
+    <%= image_tag("product-b#{product.id}.jpg", class: 'pic-2') %>
+  <% else %>
+    <%= image_tag("product-a4.jpg", class: 'pic-1') %>
+    <%= image_tag("product-b4.jpg", class: 'pic-2') %>
+  <% end %>
   <span class="product-sale-label">sale!</span>
   <ul class="social">
     <li>

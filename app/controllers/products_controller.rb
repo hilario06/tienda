@@ -3,10 +3,13 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
   def index
+    # listar productos (1:eliminados, 2: productos no eliminados)
     if params[:is_removed_products]
       return @products = params[:is_removed_products].to_i == 1 ? Product.only_deleted : Product.all
     end
+
     if params[:query].present?
+      # busqueda con pg_search
       @products = Product.global_search(params[:query])
     else
       @products = Product.all
@@ -14,7 +17,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    authorize @product
     @review = Review.new
     @shopping_cart_product = ShoppingCartProduct.new
     if user_signed_in?
@@ -39,12 +41,9 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit
-    authorize @product
-  end
+  def edit; end
 
   def update
-    authorize @product
     if @product.update(product_params)
       redirect_to product_url(@product)
     else
@@ -53,9 +52,13 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    authorize @product
-    @product.destroy
-    redirect_to products_url
+    # verificando si el producto esta en algun carrito
+    if ShoppingCartProduct.joins(:shopping_cart).where(shopping_cart: {active: true}).pluck('product_id').uniq.include?(params[:id].to_i)
+      redirect_to products_url, notice: 'No se pudo eliminar porque esta en una carrito'
+    else
+      @product.destroy
+      redirect_to products_url, notice: 'Producto eliminado'
+    end
   end
 
   def restore
@@ -68,6 +71,7 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def product_params

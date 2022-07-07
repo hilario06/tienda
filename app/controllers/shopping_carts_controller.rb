@@ -7,6 +7,6 @@ class ShoppingCartsController < ApplicationController
     @products = shopping_cart.products
     shopping_cart.update_total!
     @total = shopping_cart.total
-    @products_in_cart = shopping_cart.shopping_cart_products.includes([:product])
+    @products_in_cart = shopping_cart.shopping_cart_products.includes(:product)
   end
 end

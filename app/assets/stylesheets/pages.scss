@@ -47,9 +47,17 @@
     }
   }
   .contact-form{
+    input{
+      height: 42px;
+    }
     button{
       background-color: #858585;
       color: #fff;
+      border: 0;
+      padding: 9px 10px;
+      &:hover{
+        background-color: #BDD239;
+      }
     }
   }
 

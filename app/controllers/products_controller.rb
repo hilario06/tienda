@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
   def destroy
     # verificando si el producto esta en algun carrito
     if ShoppingCartProduct.joins(:shopping_cart).where(shopping_cart: {active: true}).pluck('product_id').uniq.include?(params[:id].to_i)
-      redirect_to products_url, notice: 'No se pudo eliminar porque esta en una carrito'
+      redirect_to products_url, notice: 'No se pudo eliminar porque esta en un carrito'
     else
       @product.destroy
       redirect_to products_url, notice: 'Producto eliminado'

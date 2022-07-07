@@ -1,0 +1,55 @@
+<div class="product-image">
+  <%= link_to product do %>
+    <% if product.id <= 10 %>
+      <%= image_tag("product-a#{product.id}.jpg", class: 'pic-1') %>
+      <%= image_tag("product-b#{product.id}.jpg", class: 'pic-2') %>
+    <% else %>
+      <%= image_tag("product-a4.jpg", class: 'pic-1') %>
+      <%= image_tag("product-b4.jpg", class: 'pic-2') %>
+    <% end %>
+  <% end %>
+  <span class="product-sale-label">sale!</span>
+  <ul class="social">
+    <li>
+      <%= link_to product do %>
+        <i class="fa fa-eye"></i>
+      <% end %>
+    </li>
+    <li>
+      <!--a_like_from (1: lista de productos, 2: show products, 3: shopping cart)-->
+      <%= link_to product_likes_path(:product => product, :a_like_from => 1), method: :post do %>
+        <i class="fa fa-heart"></i>
+      <% end %>
+    </li>
+    <% if user_signed_in? %>
+      <% if policy(Product).edit? %>
+        <li>
+          <%= link_to edit_product_path(product), style: 'color: #fff; background-color: blue;' do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+        </li>
+      <% end %>
+      <% if policy(Product).destroy? %>
+        <li>
+          <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, style: 'color: #fff; background-color: red;' do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <div class="product-rating">
+      <ul class="rating">
+          <li class="fas fa-star"></li>
+          <li class="fas fa-star"></li>
+          <li class="fas fa-star"></li>
+          <li class="far fa-star"></li>
+          <li class="far fa-star"></li>
+      </ul>
+      <%= link_to 'AÑADIR AL CARRITO', shopping_cart_products_path(:quantity => 1, :product_id => product.id), method: :post %>
+  </div>
+</div>
+<div class="product-content">
+    <h3 class="title"><%= link_to product.title, product %></h3>
+    <div class="price">$ <%= product.price %></div>
+</div>

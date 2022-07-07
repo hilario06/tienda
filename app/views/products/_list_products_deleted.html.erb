@@ -1,0 +1,32 @@
+<div class="product-image">
+
+    <% if product.id <= 10 %>
+      <%= image_tag("product-a#{product.id}.jpg", class: 'pic-1') %>
+      <%= image_tag("product-b#{product.id}.jpg", class: 'pic-2') %>
+    <% else %>
+      <%= image_tag("product-a4.jpg", class: 'pic-1') %>
+      <%= image_tag("product-b4.jpg", class: 'pic-2') %>
+    <% end %>
+
+  <span class="product-sale-label">sale!</span>
+  <ul class="social">
+    <li>
+      <%= link_to product_restore_path(product), method: :post do %>
+        <i class="fas fa-trash-restore"></i>
+      <% end %>
+    </li>
+  </ul>
+  <div class="product-rating">
+    <ul class="rating">
+        <li class="fas fa-star"></li>
+        <li class="fas fa-star"></li>
+        <li class="fas fa-star"></li>
+        <li class="far fa-star"></li>
+        <li class="far fa-star"></li>
+    </ul>
+  </div>
+</div>
+<div class="product-content">
+    <h3 class="title"><%= product.title %></h3>
+    <div class="price">$ <%= product.price %></div>
+</div>

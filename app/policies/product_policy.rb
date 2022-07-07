@@ -22,4 +22,8 @@ class ProductPolicy < ApplicationPolicy
   def destroy?
     user.admin
   end
+
+  def restore?
+    user.admin?
+  end
 end

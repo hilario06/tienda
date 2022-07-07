@@ -3,6 +3,9 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
   def index
+    if params[:is_removed_products]
+      return @products = params[:is_removed_products].to_i == 1 ? Product.only_deleted : Product.all
+    end
     if params[:query].present?
       @products = Product.global_search(params[:query])
     else
@@ -56,9 +59,9 @@ class ProductsController < ApplicationController
   end
 
   def restore
-    @category = Product.restore(params[:product_id])
-    authorize @category
-    redirect_to categories_path
+    @product = Product.restore(params[:product_id])
+    authorize @product
+    redirect_to products_path
   end
 
   private

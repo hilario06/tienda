@@ -32,7 +32,8 @@
               <h4 class="my-2">NOVEDADES 2022</h4>
               <h5 class="my-3"><%= @products[1][1] %></h5>
               <p class="my-4"><%= @products[1][2] %></p>
-              <%= link_to 'Añadir al Carrito', shopping_cart_products_path(:quantity => 1, :product_id => @products[1][0]), method: :post %>
+              <!--add_cart_from (1: home, 2: list products, 3: show products)-->
+              <%= link_to 'Añadir al Carrito', shopping_cart_products_path(:quantity => 1, :product_id => @products[1][0], :add_cart_from => 1), method: :post %>
             </div>
           </div>
         </div>
@@ -47,7 +48,8 @@
               <h4 class="my-2">NOVEDADES 2022</h4>
               <h5 class="my-3"><%= @products[2][1] %></h5>
               <p class="my-4"><%= @products[2][2] %></p>
-              <%= link_to 'Añadir al Carrito', shopping_cart_products_path(:quantity => 1, :product_id => @products[2][0]), method: :post %>
+              <!--add_cart_from (1: home, 2: list products, 3: show products)-->
+              <%= link_to 'Añadir al Carrito', shopping_cart_products_path(:quantity => 1, :product_id => @products[2][0], :add_cart_from => 1), method: :post %>
             </div>
           </div>
         </div>

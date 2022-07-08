@@ -38,13 +38,27 @@
         h6{
           margin-bottom: 5px;
         }
-        small{
-          color: #aaa;
+        p{
           font-size: 0.95em;
+          width: 60vw;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        @media only screen and (max-width: 1024px) {
+          p {
+            width: 50vw;
+          }
+        }
+        @media only screen and (max-width:768px) {
+          p {
+            width: 40vw;
+          }
         }
       }
     }
     .content-rigth{
+      display: flex;
       .show-product{
         padding: 6px 4px 6px 8px;
         margin-right: 8px;

@@ -1,7 +1,24 @@
 .container-product-likes{
-  height: 100vh;
+  height: 90vh;
   // background-color: #EEF5F9;
   background-color: #F5F5F5;
+  .container{
+    height: 100%;
+    .container-no-products-likes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      p{
+        a{
+          &:hover {
+            color: #BDD239;
+          }
+        }
+      }
+    }
+  }
+
   .item-product-likes{
     background-color: #fff;
     display: flex;

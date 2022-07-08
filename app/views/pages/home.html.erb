@@ -79,7 +79,7 @@
           <% end %>
         </div>
         <p class="text-center">
-          <a href=""><%= category.name %></a>
+          <%= link_to category.name, products_path(:query => category.name), method: :get %>
         </p>
       </div>
     <% end %>

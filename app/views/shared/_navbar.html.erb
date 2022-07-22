@@ -42,7 +42,7 @@
                     <i class="far fa-heart"></i>
                   </span>
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill">
-                    <%= current_user.product_likes.count %>
+                    <%= current_user.products_you_like.count %>
                   </span>
                 <% end %>
                 <%= link_to shopping_carts_path, class: 'position-relative cart-style me-3 ms-3' do %>

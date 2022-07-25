@@ -24,6 +24,7 @@ Things you may want to cover:
 <b>Tienda Virtual</b> <br>
 <b>Link: </b> http://tienda-hilario.herokuapp.com/  <br>
 <h5>Home</h5>
-<img src="https://drive.google.com/file/d/1I45e6AcdUhJvGM79WF_hKSWhTMEMjvo9/view" alt="imagen home">
+![Home](https://raw.githubusercontent.com/parzibyte/WaterPy/master/assets/ImagenV1.png)
+![Home](https://drive.google.com/file/d/1I45e6AcdUhJvGM79WF_hKSWhTMEMjvo9/view)
 <h5>Productos</h5>
-<img src="https://drive.google.com/file/d/1xON_Ko2iYsMI6VZvEQIF478-czrwa_kp/view?usp=sharing" alt="imagen home">
+![List Product](https://drive.google.com/file/d/1xON_Ko2iYsMI6VZvEQIF478-czrwa_kp/view?usp=sharing)

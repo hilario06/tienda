@@ -20,6 +20,5 @@ module Tienda
     # config.eager_load_paths << Rails.root.join("extras")
 
     # cambio requerido por heroku
-    config.assets.initialize_on_precompile = false
   end
 end

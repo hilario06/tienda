@@ -1,7 +1,7 @@
 <b>Version Ruby:</b> ruby '2.7.4'<br>
 <b>Version Rails:</b> rails '6.1.6'<br>
 <b>Base de Datos:</b> PostgreSQL<br>
-
+[![pagina-principal.png](https://i.postimg.cc/3whsncGS/pagina-principal.png)](https://postimg.cc/JsTYhKPZ)
 <b><h2>Tienda Virtual</h2></b> <br>
 <b>Link: </b> http://tienda-hilario.herokuapp.com/  <br>
 <h5>Home</h5>

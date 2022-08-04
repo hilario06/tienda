@@ -1,22 +1,33 @@
 <b>Version Ruby:</b> ruby '2.7.4'<br>
 <b>Version Rails:</b> rails '6.1.6'<br>
 <b>Base de Datos:</b> PostgreSQL<br>
-[![pagina-principal.png](https://i.postimg.cc/3whsncGS/pagina-principal.png)](https://postimg.cc/JsTYhKPZ)
-<b><h2>Tienda Virtual</h2></b> <br>
-<b>Link: </b> http://tienda-hilario.herokuapp.com/  <br>
+<b><h2>Tienda Virtual</h2></b><br>
+<b>Link: </b> http://tienda-hilario.herokuapp.com/
 <h5>Home</h5>
-![Home](https://drive.google.com/file/d/1I45e6AcdUhJvGM79WF_hKSWhTMEMjvo9/view)<br>
+
 [![pagina-principal.png](https://i.postimg.cc/3whsncGS/pagina-principal.png)](https://postimg.cc/JsTYhKPZ)
+
 <h5>Productos</h5>
-![List Product](https://drive.google.com/file/d/1xON_Ko2iYsMI6VZvEQIF478-czrwa_kp/view)
+
+[![lista-product.png](https://i.postimg.cc/4xw3vV79/lista-product.png)](https://postimg.cc/TKLGfycd)
+
 <h5>Vista del producto</h5>
-![Show Product](https://drive.google.com/file/d/1nwgc2dVc_-33JPq6lNylorl831PFmCM8/view?usp=sharing)
+
+[![show-product.png](https://i.postimg.cc/sX6By8CK/show-product.png)](https://postimg.cc/N9XGkdMr)
+
 <h5>Producto en lista de deseos</h5>
-![Like Product](https://drive.google.com/file/d/1taQReD7LOc4ILh6iC4aG3crIfzEBANOI/view?usp=sharing)
+
+[![lista-deseos-product.png](https://i.postimg.cc/0QTxqRyp/lista-deseos-product.png)](https://postimg.cc/S2fHWP8s)
+
 <h5>Carrito de Compras</h5>
-![Shopping Cart](https://drive.google.com/file/d/1s7y5OtvdRrKSeHp2ikW9Nl1Ycgc8MTmX/view?usp=sharing)
+
+[![carrito-de-compras.png](https://i.postimg.cc/nVBdnjFy/carrito-de-compras.png)](https://postimg.cc/SjQLrKzd)
+
 <h2>Vistas del Administrador</h2>
 <h5>Productos</h5>
-![List Product](https://drive.google.com/file/d/1VIJR9YhhOAXIcMuam50dxXRsJ-k6GP3_/view?usp=sharing)
+
+[![lista-deseos-product-admin.png](https://i.postimg.cc/GpnF7zY9/lista-deseos-product-admin.png)](https://postimg.cc/cvTt6RFN)
+
 <h5>Categorias</h5>
-![List Category](https://drive.google.com/file/d/159vFEDjdkT0MHpNyHcUxtwtq9egDxpFQ/view?usp=sharing)
+
+[![list-category.png](https://i.postimg.cc/vTt4HFZ6/list-category.png)](https://postimg.cc/q6gJjFnk)

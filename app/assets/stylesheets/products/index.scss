@@ -2,119 +2,112 @@
   font-family: 'Roboto', sans-serif;
   text-align: center;
   transition: all 0.5s;
-}
+  &:hover{
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+  }
+  .product-image{
+    position: relative;
+    overflow: hidden;
+    a.image{
+      display: block;
+    }
+    img{
+      width: 100%;
+      height: auto;
+    }
+    .pic-1{
+      opacity: 1;
+      backface-visibility: hidden;
+      transition: all 0.5s;
+    }
+    .pic-2{
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.5s;
+    }
+  }
+  .product-sale-label{
+    color: #fff;
+    background: #BDD239;
+    font-size: 14px;
+    font-style: italic;
+    text-transform: uppercase;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .social{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: 15px;
+    right: 7px;
+    z-index: 1;
+    li {
+      transform: translateX(60px);
+      transition: all 0.3s ease 0.3s;
+      a {
+        color: #707070;
+        background-color: #f2f4f3;
+        font-size: 16px;
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
+        margin: 0 0 7px;
+        border-radius: 50px;
+        display: block;
+        transition: all 0.3s ease 0s;
+        &:hover {
+          color: #BDD239;
+        }
+      }
+      &:nth-child(2) {
+        transition: all 0.3s ease 0.4s;
+      }
+    }
+  }
+  .product-rating{
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    padding: 10px;
+    opacity: 0;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    transition: all .2s ease-in-out 0s;
+    z-index: 0;
 
-.product-grid:hover {
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
-}
+    a {
+      font-size: 15px;
+      color: #000;
 
-.product-grid .product-image {
-  position: relative;
-  overflow: hidden;
-}
-
-.product-grid .product-image a.image {
-  display: block;
-}
-
-.product-grid .product-image img {
-  width: 100%;
-  height: auto;
-}
-
-.product-image .pic-1 {
-  opacity: 1;
-  backface-visibility: hidden;
-  transition: all 0.5s;
+      &:hover {
+        color: #BDD239;
+      }
+    }
+  }
 }
 
 .product-grid:hover .product-image .pic-1 {
   opacity: 0;
 }
 
-.product-image .pic-2 {
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.5s;
-}
-
 .product-grid:hover .product-image .pic-2 {
   opacity: 1;
 }
 
-.product-grid .product-sale-label {
-  color: #fff;
-  background: #BDD239;
-  font-size: 14px;
-  font-style: italic;
-  text-transform: uppercase;
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
-  border-radius: 50px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-.product-grid .social {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  position: absolute;
-  top: 15px;
-  right: 7px;
-  z-index: 1;
-}
-
-.product-grid .social li {
-  transform: translateX(60px);
-  transition: all 0.3s ease 0.3s;
-}
-
-.product-grid .social li:nth-child(2) {
-  transition: all 0.3s ease 0.4s;
-}
-
 .product-grid:hover .social li {
   transform: translateX(0);
-}
-
-.product-grid .social li a {
-  color: #707070;
-  background-color: #f2f4f3;
-  font-size: 16px;
-  line-height: 40px;
-  width: 40px;
-  height: 40px;
-  margin: 0 0 7px;
-  border-radius: 50px;
-  display: block;
-  transition: all 0.3s ease 0s;
-}
-
-.product-grid .social li a:hover {
-  color: #BDD239;
-}
-
-.product-grid .product-rating {
-  background: rgba(255, 255, 255, 0.95);
-  width: 100%;
-  padding: 10px;
-  opacity: 0;
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  transition: all .2s ease-in-out 0s;
-  z-index: 0;
-  a{
-    font-size: 15px;
-  }
 }
 
 .product-grid:hover .product-rating {
@@ -122,12 +115,6 @@
   bottom: 0;
 }
 
-.product-rating a{
-  color: #000;
-  &:hover{
-    color: #BDD239;
-  }
-}
 .product-grid .rating {
   padding: 0;
   margin: 0;

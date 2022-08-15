@@ -20,7 +20,7 @@
             <div class="quantity">
               <%= f.input :quantity, label: false, input_html: { min: '1' } %>
             </div>
-            <%= f.submit 'Añadir al carrito', class: '' %>
+            <%= f.submit 'Añadir al carrito', class: 'button-primary' %>
           <% end %>
           <% if user_signed_in? && policy(Product).edit? %>
             <%= link_to edit_product_path(@product), class: 'edit' do %>
@@ -85,7 +85,7 @@
               <strong>Tu clasificación: </strong>&nbsp;&nbsp;<%= f.input :rating, input_html: { min: '1', max: '5' }, placeholder: "1,..,5", label: false, required: true %>
             </div>
             <%= f.input :content, as: :text, placeholder: "Comentario", label: false, required: true %>
-            <%= f.submit 'Agregar Comentario', class: 'buttom-review mt-2' %>
+            <%= f.submit 'Agregar Comentario', class: 'mt-2 button-primary' %>
           <% end %>
         <% end %>
       </div>

@@ -90,19 +90,6 @@
           display: flex;
           justify-content: space-between;
         }
-        a {
-          padding: 10px 40px;
-          background-color: rgb(189, 210, 57);
-          color: #FFF;
-          border: 1px solid #BDD239;
-          width: 100%;
-          display: inline-block;
-          text-align: center;
-          &:hover {
-            background-color: #FFF;
-            color: #BDD239;
-          }
-        }
       }
       @media (max-width: 991px) {
         .container-list-products{

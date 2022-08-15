@@ -1,0 +1,14 @@
+.button-primary {
+  padding: 10px 29px;
+  font-size: 16px;
+  line-height: 1.3125;
+  background-color: #BDD239;
+  border: 1px solid #BDD239;
+  color: #F7F7F7;
+  display: inline-block;
+
+  &:hover {
+    background-color: #FFF;
+    color: #BDD239;
+  }
+}

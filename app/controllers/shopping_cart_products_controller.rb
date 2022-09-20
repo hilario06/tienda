@@ -1,4 +1,5 @@
 class ShoppingCartProductsController < ApplicationController
+  before_action :set_shopping_cart_product, only: %i[ update destroy ]
 
   def create
     route = is_the_route # method
@@ -6,17 +7,23 @@ class ShoppingCartProductsController < ApplicationController
 
     @shopping_cart_product = ShoppingCartProduct.new
     @shopping_cart_product.product_id = params[:product_id]
+
     shopping_cart = current_user.shopping_cart
     unless shopping_cart
       shopping_cart = ShoppingCart.create(user:current_user, active:true)
     end
     @shopping_cart_product.shopping_cart_id = shopping_cart.id
     add_quantity # method
-    if @shopping_cart_product.save
+
+    # actualizando stock producto
+    product = Product.find(params[:product_id])
+    new_product_stock = product.stock.to_i - @shopping_cart_product.quantity
+
+    if new_product_stock >= 0 && @shopping_cart_product.save
+      product.update(stock: new_product_stock)
       redirect_to route, notice: "Producto agregado al carrito"
     else
-      # redirect_to product_path(params[:product_id])
-      redirect_to route
+      redirect_to route, notice: 'Producto no hay en stock'
     end
   end
 
@@ -35,15 +42,26 @@ class ShoppingCartProductsController < ApplicationController
   end
 
   def update
-    shopping_cart_product = ShoppingCartProduct.find(params[:id])
-    quantity = shopping_cart_product.quantity + params[:quantity].to_i
-    shopping_cart_product.update(quantity: quantity)
-    redirect_to shopping_carts_path
+    quantity = @shopping_cart_product.quantity
+    new_quantity = quantity + params[:quantity].to_i
+    # actualizando stock producto
+    product = Product.find(@shopping_cart_product.product.id)
+    new_product_stock = product.stock.to_i + quantity - new_quantity
+    if new_product_stock >= 0
+      product.update(stock: new_product_stock)
+      @shopping_cart_product.update(quantity: new_quantity)
+      redirect_to shopping_carts_path
+    else
+      redirect_to shopping_carts_path, notice: 'Producto no hay en stock'
+    end
   end
 
   def destroy
-    shopping_cart_product = ShoppingCartProduct.find(params[:id])
-    shopping_cart_product.destroy
+    # actualizando stock producto
+    product = Product.find(@shopping_cart_product.product.id)
+    product.update(stock: product.stock.to_i + @shopping_cart_product.quantity)
+
+    @shopping_cart_product.destroy
     redirect_to shopping_carts_path
   end
 
@@ -59,5 +77,9 @@ class ShoppingCartProductsController < ApplicationController
 
   def is_product_add?
     @shopping_cart_product = ShoppingCartProduct.find_by(product_id: params[:product_id], shopping_cart_id: current_user.shopping_cart)
+  end
+
+  def set_shopping_cart_product
+    @shopping_cart_product = ShoppingCartProduct.find(params[:id])
   end
 end

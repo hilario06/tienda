@@ -86,7 +86,6 @@ test:
 #   password: <%= ENV['TIENDA_DATABASE_PASSWORD'] %>
 production:
 		  <<: *default
-		  url: <%= ENV["DATABASE_URL"] %>
 		  database: tienda_production
 		  username: tienda
 		  password: <%= ENV["TIENDA_DATABASE_PASSWORD"] %>
